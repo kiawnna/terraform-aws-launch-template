@@ -11,9 +11,19 @@ module "launch_template" {
 }
 ```
 > This example will create a launch template that accepts all the provided defaults. Review defaults below under Variables / Customizations.
+> UPDATE WITH BELOW INFO
+data "aws_ami" "amazon-2" {
+  most_recent = true
+
+  filter {
+    name = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-ebs"]
+  }
+  owners = ["amazon"]
+}
 
 ## Resources Created
-* A laucnh template
+* A launch template.
 
 ## Outputs
 The launch template id and arn are outputs.

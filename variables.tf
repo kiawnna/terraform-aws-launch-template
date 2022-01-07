@@ -10,18 +10,8 @@ variable "instance_profile_name" {
   default = null
 }
 #-----------------#
-data "aws_ami" "amazon-2" {
-  most_recent = true
-
-  filter {
-    name = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-ebs"]
-  }
-  owners = ["amazon"]
-}
 variable "image_id" {
   type = string
-  default = data.aws_ami.amazon-2.id
 }
 #-----------------#
 variable "instance_initiated_shutdown_behavior" {
