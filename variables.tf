@@ -42,3 +42,7 @@ variable "instance_name_tag" {
   type = string
   default = "instance"
 }
+variable "user_data" {
+  type = string
+  default = null
+}

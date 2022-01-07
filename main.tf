@@ -6,7 +6,7 @@ resource "aws_launch_template" "launch_template" {
   instance_type = var.instance_type
   key_name = var.key_name
   vpc_security_group_ids = var.security_group_ids
-  user_data = filebase64("${path.module}/example.sh")
+  user_data = var.user_data
 
   dynamic iam_instance_profile {
     for_each = var.instance_profile_name != null ? [1] : []
