@@ -4,7 +4,7 @@ resource "aws_launch_template" "launch_template" {
   image_id = var.image_id
   instance_initiated_shutdown_behavior = var.instance_initiated_shutdown_behavior
   instance_type = var.instance_type
-  key_name = var.key_name
+  key_name = var.key_pair
   vpc_security_group_ids = var.security_group_ids
   user_data = var.user_data
 

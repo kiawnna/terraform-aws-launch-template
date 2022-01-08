@@ -11,16 +11,6 @@ module "launch_template" {
 }
 ```
 > This example will create a launch template that accepts all the provided defaults. Review defaults below under Variables / Customizations.
-> UPDATE WITH BELOW INFO
-data "aws_ami" "amazon-2" {
-  most_recent = true
-
-  filter {
-    name = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-ebs"]
-  }
-  owners = ["amazon"]
-}
 
 ## Resources Created
 * A launch template.
@@ -54,7 +44,7 @@ Tags are automatically added to all resources where possible. Tags will have the
 
 ```
 tags = {
-    Name = "${instance_name_tag}-${var.environment}-resource"
+    Name = "${var.instance_name_tag}-${var.environment}-resource"
     Deployment_Method = "terraform"
     Environment = var.environment
   }
