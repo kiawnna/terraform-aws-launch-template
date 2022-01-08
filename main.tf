@@ -19,8 +19,11 @@ resource "aws_launch_template" "launch_template" {
     enabled = var.monitoring_enabled
   }
 
-  network_interfaces {
-    associate_public_ip_address = var.associate_public_ip_address
+  dynamic network_interfaces {
+    for_each = var.associate_public_ip_address != null ? [1] : []
+    content {
+     name = var.associate_public_ip_address
+    }
   }
 
   tag_specifications {

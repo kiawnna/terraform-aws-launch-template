@@ -32,7 +32,7 @@ variable "monitoring_enabled" {
 }
 variable "associate_public_ip_address" {
   type = bool
-  default = false
+  default = null
 }
 variable "security_group_ids" {
   type = list(string)
