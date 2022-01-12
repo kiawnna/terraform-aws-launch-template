@@ -3,7 +3,7 @@ variable "environment" {
 }
 variable "ebs_optimized" {
   type = bool
-  default = true
+  default = false
 }
 variable "instance_profile_name" {
   type = string

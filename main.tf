@@ -23,6 +23,7 @@ resource "aws_launch_template" "launch_template" {
     for_each = var.associate_public_ip_address != null ? [1] : []
     content {
      name = var.associate_public_ip_address
+     security_groups = var.security_group_ids
     }
   }
 
